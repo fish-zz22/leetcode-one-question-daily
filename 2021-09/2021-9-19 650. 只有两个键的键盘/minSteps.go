@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println(getSqrt(8))
 	fmt.Println(minSteps(8))
 }
 
