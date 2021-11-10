@@ -9,10 +9,6 @@ func main() {
 }
 
 func findPoisonedDuration(timeSeries []int, duration int) int {
-	if len(timeSeries) == 1 {
-		return duration
-	}
-
 	var seconds int
 	for i := 1; i < len(timeSeries); i++ {
 		if timeSeries[i]-timeSeries[i-1] >= duration {
