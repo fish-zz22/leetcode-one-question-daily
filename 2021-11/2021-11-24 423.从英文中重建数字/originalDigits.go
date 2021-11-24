@@ -27,7 +27,7 @@ func originalDigits(s string) string {
 
 	count[9] = hash['i'] - count[5] - count[6] - count[8]
 	ans := []byte{}
-	for i, c := range cnt {
+	for i, c := range count {
 		ans = append(ans, bytes.Repeat([]byte{byte('0' + i)}, c)...)
 	}
 	return string(ans)
