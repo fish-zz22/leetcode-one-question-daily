@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
@@ -12,17 +11,33 @@ func main() {
 }
 
 func truncateSentence(s string, k int) string {
-	var builder strings.Builder
+	//var builder strings.Builder
+	//
+	//strList := strings.Split(s, " ")
+	//for i := 0; i < k; i++ {
+	//	if i == k-1 {
+	//		builder.WriteString(strList[i])
+	//	} else {
+	//		builder.WriteString(strList[i])
+	//		builder.WriteString(" ")
+	//	}
+	//
+	//}
+	//return builder.String()
 
-	strList := strings.Split(s, " ")
-	for i := 0; i < k; i++ {
-		if i == k-1 {
-			builder.WriteString(strList[i])
-		} else {
-			builder.WriteString(strList[i])
-			builder.WriteString(" ")
+	index := -1
+	for i, v := range s {
+		if v == ' ' {
+			k--
 		}
 
+		if k == 0 {
+			index = i
+			break
+		}
 	}
-	return builder.String()
+	if index == -1 {
+		return s
+	}
+	return s[:index]
 }
