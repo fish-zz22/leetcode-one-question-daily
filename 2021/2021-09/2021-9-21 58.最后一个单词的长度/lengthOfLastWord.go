@@ -6,12 +6,12 @@ func main() {
 }
 
 func lengthOfLastWord(s string) int {
-	l := len(s)-1
+	l := len(s) - 1
 	var res int
-	for i:= l;i>=0;i--{
-		if string(s[i]) != " "{
-			res ++
-		}else if res != 0{
+	for i := l; i >= 0; i-- {
+		if string(s[i]) != " " {
+			res++
+		} else if res != 0 {
 			return res
 		}
 	}

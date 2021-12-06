@@ -11,16 +11,16 @@ func main() {
 }
 
 func minSteps(n int) int {
-	if n == 1{
+	if n == 1 {
 		return 0
 	}
-	dp := make([]int,n+1)
-	for i:=2;i<=n;i++{
+	dp := make([]int, n+1)
+	for i := 2; i <= n; i++ {
 		dp[i] = i
 
-		for j:=2;j<=getSqrt(n);j++{
-			if i % j == 0{
-				dp[i] = dp[j]+dp[i/j]
+		for j := 2; j <= getSqrt(n); j++ {
+			if i%j == 0 {
+				dp[i] = dp[j] + dp[i/j]
 				break
 			}
 		}
